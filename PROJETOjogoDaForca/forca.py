@@ -24,7 +24,7 @@ def dadosJogador(arquivo2, nome, score):
         listaAtualizada = []
         usuario_encontrado = False
 
-        with open('usuarios.txt', 'r') as arquivo:
+        with open('usuarios.txt', 'r') as arquivo2:
             linhas = arquivo.readlines()
 
         for linha in linhas:
@@ -39,8 +39,9 @@ def dadosJogador(arquivo2, nome, score):
         if not usuario_encontrado:
             listaAtualizada.append(f"{nome},{score}\n")
 
-        with open('usuarios.txt', 'w') as arquivo:
-            arquivo.writelines(listaAtualizada)
+        with open('usuarios.txt', 'w') as arquivo2  :
+            arquivo2.writelines(listaAtualizada)
+
     except FileNotFoundError:
          with open('usuarios.txt', 'x') as arquivo2:
             print("O arquivo nao existe, mas acabou de ser criado!")
